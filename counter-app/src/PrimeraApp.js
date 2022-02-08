@@ -1,8 +1,12 @@
+import PropTypes from "prop-types";
 //Functional Component
 
-//import { Fragment } from "react"; // fragment importacion innecesaria
 
-const PrimeraApp =( {saludo = 'Hola mundo'} ) =>{ //desestructuracion
+const PrimeraApp =( {saludo} ) =>{ //desestructuracion
+
+    // if( !saludo){
+    //     throw new Error(' EL saludo es necesario')
+    // }
 
     return ( 
              <>
@@ -13,5 +17,8 @@ const PrimeraApp =( {saludo = 'Hola mundo'} ) =>{ //desestructuracion
     );
 }
 
+PrimeraApp.propTypes = {
+  saludo:PropTypes.string.isRequired   
+}
 
 export default PrimeraApp;
