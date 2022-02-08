@@ -2,14 +2,7 @@
 
 //import { Fragment } from "react"; // fragment importacion innecesaria
 
-const PrimeraApp =() =>{
-    const saludo = 'Hola Mundo';
-   // const saludo =[1,2,3,5,6];
-    // const saludo ={    //fail
-    //     "nombre":"jhon",
-    //     "edad":45
-    // }
-    
+const PrimeraApp =( {saludo = 'Hola mundo'} ) =>{ //desestructuracion
 
     return ( 
              <>
