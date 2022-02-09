@@ -1,3 +1,9 @@
 https://create-react-app.dev/
 
 https://es.reactjs.org/docs/events.html
+
+//run test
+npm run test
+
+//jest
+https://jestjs.io/
