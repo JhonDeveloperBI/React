@@ -20,4 +20,23 @@ describe('test in <PrimeraApp />', () => {
         expect( wrapper).toMatchSnapshot(); // snapshot
      });
 
+
+     test('should show the subtitle send for props',() => {
+
+      const saludo = 'Hola';
+      const subtitulo = 'mensaje';
+
+      const wrapper = shallow(
+                  <PrimeraApp 
+                  saludo={ saludo }
+                  subtitulo = { subtitulo }
+                  />
+      ); // simulate click, documents
+       
+      const textParrafo = wrapper.find('p').text(); //document.querySelector
+
+      
+      expect(textParrafo).toBe(subtitulo); // snapshot
+   });
+
  })
