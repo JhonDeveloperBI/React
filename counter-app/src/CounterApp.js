@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 //Functional Component
 
 
-const CounterApp =( {value = 1 } ) =>{ //desestructuracion
+const CounterApp =( {value = 10 } ) =>{ //desestructuracion
 
  const [ counter , setCounter ] = useState( value ); //depend setNombre of first argument [ nombre, setNombre]
 
