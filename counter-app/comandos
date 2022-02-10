@@ -12,3 +12,15 @@ https://gist.github.com/Klerith/4aeb99d31aedbc29ff4d54bbb77d2d7f
 
 //api
 https://developers.giphy.com/
+
+
+//enzyme
+https://github.com/wojtekmaj/enzyme-adapter-react-17
+
+https://enzymejs.github.io/enzyme/
+
+https://www.npmjs.com/package/enzyme-to-json
+
+npm install --save-dev enzyme-to-json
+
+npm i enzyme
