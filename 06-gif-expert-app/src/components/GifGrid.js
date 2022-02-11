@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
+import { GifGridItem } from './GifGridItem';
 
 export const GifGrid = ({ category }) => {
 
-
-    const [count, setCount] = useState(0)  
+    const [Images, setImages] = useState([]) //always init
 
     //it is used to solve the rendering problem of the component
     useEffect(() =>{
@@ -26,8 +26,7 @@ export const GifGrid = ({ category }) => {
                     url: img.images?.downsized_medium.url
                 }
             })
-        console.log("cambio")
-            return gifs;
+       setImages(gifs);
         }
 
       //  getGifs();
@@ -35,8 +34,23 @@ export const GifGrid = ({ category }) => {
   return (
     <div>
         <h3>{ category }</h3>
-        <h3> { count }</h3>
-        <button onClick={ ()=> setCount( count +1 )}></button>
+       {/*  <ol>
+            {
+             Images.map( ({ id, title}) =>  (
+               <li key={id}>{title}</li> 
+              ))
+            }
+        </ol> */}
+
+         {
+             Images.map( ( img ) =>  (
+               <GifGridItem  
+                key= { img.id } 
+                { ...img } //operator express
+                /> 
+              ))
+            }
+
     </div>
   )
 }
