@@ -13,14 +13,13 @@ export const AddCategory = ( { setCategories } ) => {
        e.preventDefault(); // no se refresca la pagina
 
        if( inputValue.trim().length >2){
-        setCategories( cats => [...cats,inputValue])
+        setCategories( cats => [inputValue,...cats])
         setinputValue(''); // evita doble post in the form
        }
    }
 
   return (
     <form onSubmit={ handleSubmit }>
-    {/*  <h1> { inputValue }</h1> */}
         <input 
             type = "text" 
             value={ inputValue }
