@@ -46,7 +46,7 @@ export const GifGrid = ({ category }) => {
              Images.map( ( img ) =>  (
                <GifGridItem  
                 key= { img.id } 
-                { ...img } //operator express
+                { ...img } //operator express propiedad independiente
                 /> 
               ))
             }
