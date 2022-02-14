@@ -8,30 +8,24 @@ export const useFetchGifs = ( category ) => { // hook begin with word Use
         data: [],
         loading: true
     });
-
-    /*
-    useEffect( () => {
+console.log(category)
+    
+    useEffect( () => { // cannot had  async the useEffect
 
         getGifs( category )
             .then( imgs => {
+                setTimeout ( () => {
+
                 
                 setState({
                     data: imgs,
                     loading: false
                 });
+
+            },3000)
             })
 
     }, [category])
-
-    */
-
-    setTimeout ( () => {
-        setState({
-            data:[1,2,3,4,5,6,7],
-            loading:false
-        })
-    },3000)
-
 
 
     return state; // { data:[], loading: true };
