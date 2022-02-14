@@ -16,3 +16,12 @@ https://hackernoon.com/structuring-projects-and-naming-components-in-react-1261b
 https://animate.style/
 
  npm install animate.css --save
+
+
+ https://www.npmjs.com/package/http-server
+
+
+ npm install --global http-server
+
+ //run localhost 
+http-server -o
