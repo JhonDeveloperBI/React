@@ -25,3 +25,16 @@ https://animate.style/
 
  //run localhost 
 http-server -o
+
+ task
+ 1.enzyme
+ npm install --save-dev @wojtekmaj/enzyme-adapter-react-17
+ npm i enzyme
+ 2.enzyme to Json
+ npm install --save-dev enzyme-to-json
+
+
+ 3. debe de mostrar el componente correctamente
+  * shallow 
+  * wrapper
+  * wrapper.toMatchSnapshot  GifGridITem
