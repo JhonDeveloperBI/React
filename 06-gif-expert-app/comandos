@@ -38,3 +38,6 @@ http-server -o
   * shallow 
   * wrapper
   * wrapper.toMatchSnapshot  GifGridITem
+
+// import propTypes
+  imt 
