@@ -41,3 +41,9 @@ http-server -o
 
 // import propTypes
   imt 
+
+  //custom hook
+  https://react-hooks-testing-library.com/
+
+  # if you're using npm
+npm install --save-dev @testing-library/react-hooks
