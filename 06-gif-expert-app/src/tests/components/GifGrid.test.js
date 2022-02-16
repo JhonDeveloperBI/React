@@ -45,7 +45,11 @@ describe('Pruebas en el <GifGrid />', () => {
         const wrapper = shallow( <GifGrid category={ category } /> );
         
         // expect( wrapper ).toMatchSnapshot();
+        
+        //validet p if exist or not and GifGridItems
+        
         expect( wrapper.find('p').exists() ).toBe(false);
+        
         expect( wrapper.find('GifGridItem').length ).toBe( gifs.length );
     })
     
