@@ -1,7 +1,14 @@
 import React, { useEffect, useState } from 'react'
+import { Message } from './Message';
 import './effects.css'
 
 export const SimpleForm = () => {
+
+    //mala practica
+   /* if(true){
+        const [state, setState] = useState
+    }
+    */
 
     const [formState, setFormState] = useState({
         name:'',
@@ -13,16 +20,16 @@ export const SimpleForm = () => {
     
 
     useEffect( () => {
-        console.log('ok')
-    },[]) //is trigger one
+  
+    },[]) 
 
     useEffect( () => {
-        console.log('email change')
-    },[email]) //is trigger one // select, combobox
+       
+    },[email]) 
  
     useEffect( () => {
-        console.log('Form change')
-    },[formState]) //anyChange in formState execute the useEffect
+       
+    },[formState]) 
 
     const  handleInputChange = ({ target }) =>{
      setFormState({
@@ -62,6 +69,9 @@ export const SimpleForm = () => {
 
              />  
         </div>
+
+          { (name === '123' ) && <Message />}
+        
     </>
   )
 }
