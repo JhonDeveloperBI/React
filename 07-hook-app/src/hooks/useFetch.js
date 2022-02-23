@@ -18,9 +18,6 @@ useEffect(() => {
   fetch ( url )
   .then( resp => resp.json())
   .then( data => {
-
-   setTimeout( () => { 
-
       if(isMount.current){
 
          setState({
@@ -32,9 +29,6 @@ useEffect(() => {
       } else {
          console.log('setState is not called')
       }
-     
-
-   }, 4000);
     
   })
 }, [url])
