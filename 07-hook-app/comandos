@@ -17,3 +17,9 @@ https://es.reactjs.org/docs/hooks-reference.html#usereducer
 
 //documentation local storage
 https://www.youtube.com/watch?v=hb8O0qRqiSk&t=2s
+
+//Router
+https://v5.reactrouter.com/web/api/NavLink
+
+
+npm i react-router-dom
