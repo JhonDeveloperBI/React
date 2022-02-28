@@ -1,23 +1,14 @@
-import React, { useEffect, useReducer } from 'react';
+import  { useEffect, useReducer } from 'react';
 import { todoReducer } from './todoReducer';
 import { useForm } from '../../hooks/useForm';
 
 import './style.css'
 
-const initialState = [{
-    id: new Date().getTime(),
-    desc: 'Aprender React',
-    done: false
-}]
+
 
 const init = () =>{
 
     return  JSON.parse(localStorage.getItem('todos') ) || []; // get array empty if is null
-    // return [{
-    //     id: new Date().getTime(),
-    //     desc: 'Aprender React',
-    //     done: false
-    // }]
 }
 
 export const TodoApp = () => {
@@ -33,8 +24,18 @@ export const TodoApp = () => {
   }, [todos])
   
 
-  console.log( description )
+  const handleDelete = ( todoId ) =>{
+      console.log(todoId);
 
+      const action = {
+        type: 'delete',
+        payload: todoId
+    }
+
+    dispatch( action );
+  }
+
+  
     const handleSubmit = ( e ) =>{
         e.preventDefault();
 
@@ -72,7 +73,10 @@ export const TodoApp = () => {
                             className="list-group-item">
                                 <p className="text-center ">{ i +1}.  { todo.desc } </p>
                                 <button 
-                                    className="btn btn-danger"> Borrar </button> 
+                                    className="btn btn-danger"
+                                    onClick={ () => handleDelete(todo.id) } // eror when is called handleDelete(todo.id)
+                                    > Borrar 
+                                </button> 
                             </li>
                     ))
                 }
