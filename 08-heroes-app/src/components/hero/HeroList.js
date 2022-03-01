@@ -5,8 +5,6 @@ export const HeroList = ({ publisher }) => {
     const heroes = getHeroesByPublish( publisher );
   return (
     <> 
-        <h1>Hero List - { publisher }</h1>
-
         <ul>
             <li>
                 {
