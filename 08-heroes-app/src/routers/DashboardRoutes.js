@@ -10,6 +10,8 @@ export const DashboardRoutes = () => {
   return (
     <>
      <Navbar />
+
+     <div className="container">
      <Routes>
              <Route path="marvel" element={<MarvelScreen />} />
              <Route path="dc" element={<DcScreen />} />
@@ -20,6 +22,8 @@ export const DashboardRoutes = () => {
             
              <Route path="/" element={<MarvelScreen />} />
         </Routes>
+     </div>
+  
      
     </>
   )
