@@ -1,11 +1,12 @@
 import React, { useContext } from 'react'
 import { Link, useNavigate, NavLink } from 'react-router-dom'
 import { AuthContext } from '../../auth/authContext'
+import { types } from '../../types/types'
 
 export const Navbar = () => {
     const navigate = useNavigate()
 
-   const { user }  = useContext(AuthContext);
+   const { user, dispatch }  = useContext(AuthContext);
 
    console.log( user.name )
 
@@ -13,6 +14,10 @@ export const Navbar = () => {
         navigate('/login',{
             replace:true
           });
+
+       dispatch({
+           type:types.logout
+       })     
     }
     return (
         <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
