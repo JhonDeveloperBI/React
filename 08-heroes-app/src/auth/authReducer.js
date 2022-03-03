@@ -18,6 +18,8 @@ const state = {
 
 export const authReducer = ( state = {}, action) =>{
 
+    console.log("action",action.payload)
+
     switch (action.type) {
         case types.login:
             return {
