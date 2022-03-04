@@ -4,7 +4,6 @@ import { AppRouter } from '../../routers/AppRouter'
 export const JournalScreen = () => {
   return (
     <div>
-        <AppRouter />
         <h1>JournalScreen</h1>
     </div>
   )
