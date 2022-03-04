@@ -21,3 +21,6 @@ npm i query-string
 
 
 outlet route-dom this is neccesary for routes private 
+
+
+https://webpack.js.org/guides/dependency-management/#requirecontext
