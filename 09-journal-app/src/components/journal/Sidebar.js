@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { JournalEntries } from './JournalEntries'
 
 export const Sidebar = () => {
     //aside para indicar que esta en un costado
@@ -23,6 +23,7 @@ export const Sidebar = () => {
                     New entry
                 </p>
             </div>
+            <JournalEntries />
         </aside>
     )
 }
