@@ -1,12 +1,51 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useForm } from '../hooks/useForm';
 
 export const RegisterScreen = () => {
+
+    /**
+     * {
+     *  name:'Jhon'
+     *  email:'jhon@gmail.com'
+     *  password:'1234'
+     * passrword:'1234'
+     * }
+     * 
+     * // useForm
+     *
+     * const handleRegister =( e ){
+     *      e.preventDefault();
+     *      console.log(name,email,password,password2)    
+     * 
+     * }
+     */
+
+    const  [values , handleInputChange ] = useForm({
+           name:'Jhon',
+           email:'jhon@gmail.com',
+          password:'1234',
+          password2:'1234'
+     })
+
+     const { name, email, password, password2 } = values;
+
+
+     const handleRegister =( e ) => {
+              e.preventDefault();
+              console.log(name,email,password,password2)     
+     }
+
+     const isFormValid = () => {
+         //TODO:
+     }
+   
+    
     return (
         <>
             <h3 className="auth__title">Register</h3>
 
-            <form>
+            <form onSubmit={ handleRegister }>
 
                 <input 
                     type="text"
@@ -14,6 +53,8 @@ export const RegisterScreen = () => {
                     name="name"
                     className="auth__input"
                     autoComplete="off"
+                    value={ name }
+                    onChange={ handleInputChange }
                 />
 
                 <input 
@@ -22,6 +63,8 @@ export const RegisterScreen = () => {
                     name="email"
                     className="auth__input"
                     autoComplete="off"
+                    value={ email }
+                    onChange={ handleInputChange }
                 />
 
                 <input 
@@ -29,6 +72,8 @@ export const RegisterScreen = () => {
                     placeholder="Password"
                     name="password"
                     className="auth__input"
+                    value={ password }
+                    onChange={ handleInputChange }
                 />
 
                 <input 
@@ -36,6 +81,8 @@ export const RegisterScreen = () => {
                     placeholder="Confirm password"
                     name="password2"
                     className="auth__input"
+                    value={ password2 }
+                    onChange={ handleInputChange }
                 />
 
 
