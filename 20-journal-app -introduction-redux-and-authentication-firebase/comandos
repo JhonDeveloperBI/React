@@ -34,3 +34,9 @@ middleware
 https://www.npmjs.com/package/redux-thunk
 
 npm i --save redux-thunk
+
+npm i validator
+
+npm uninstall node-sass
+
+npm i -D sass
