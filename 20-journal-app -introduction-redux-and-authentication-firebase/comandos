@@ -16,3 +16,6 @@ https://react-redux.js.org/
 npm install react-redux
 
 npm install redux
+
+
+https://github.com/zalmoxisus/redux-devtools-extension#usage
