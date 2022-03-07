@@ -28,3 +28,9 @@ https://github.com/zalmoxisus/redux-devtools-extension#usage
 install firebase version with nameScript
 
 npm install firebase@8.10.0
+
+
+middleware
+https://www.npmjs.com/package/redux-thunk
+
+npm i --save redux-thunk
