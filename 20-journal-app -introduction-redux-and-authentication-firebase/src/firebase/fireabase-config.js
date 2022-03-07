@@ -2,15 +2,15 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 
+// Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyDFXW2W2SNV0lmj8HJogeu267hdD2HR5WE",
-    authDomain: "react-app-cursos.firebaseapp.com",
-    databaseURL: "https://react-app-cursos.firebaseio.com",
-    projectId: "react-app-cursos",
-    storageBucket: "react-app-cursos.appspot.com",
-    messagingSenderId: "959679322615",
-    appId: "1:959679322615:web:89d8e604eee1b5fd68f6f2"
-};
+    apiKey: "AIzaSyCntW-cSHVPmNzd43S4-lscHx7hVFmSRc4",
+    authDomain: "react-cursos-ead89.firebaseapp.com",
+    projectId: "react-cursos-ead89",
+    storageBucket: "react-cursos-ead89.appspot.com",
+    messagingSenderId: "511913588039",
+    appId: "1:511913588039:web:0995ccf87b781849340862"
+  };
   
 firebase.initializeApp(firebaseConfig);
 
