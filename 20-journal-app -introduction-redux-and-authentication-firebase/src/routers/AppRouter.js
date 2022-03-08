@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Redirect } from 'react-router-dom';
 import {
     BrowserRouter as Router,
@@ -6,9 +6,18 @@ import {
     Route
 } from 'react-router-dom';
 import { JournalScreen } from '../components/journal/JournalScreen';
+import { projectAuth } from '../firebase/fireabase-config';
 import { AuthRouter } from './AuthRouter';
 
 export const AppRouter = () => {
+
+  useEffect(() => {
+      projectAuth.onAuthStateChanged( ( user ) =>{
+        
+        console.log(user);
+      })
+  }, [])
+  
   return (
     <Router>
       <div>
