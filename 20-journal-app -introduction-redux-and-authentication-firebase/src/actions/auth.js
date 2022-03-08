@@ -1,4 +1,4 @@
-import { firebase, googleAuthProvider } from '../firebase/fireabase-config';
+import { projectAuth, googleAuthProvider } from '../firebase/fireabase-config';
 import { types } from "../components/types/types";
 
 export const startLoginEmailPassword = ( email,password) =>{
@@ -13,7 +13,7 @@ export const startLoginEmailPassword = ( email,password) =>{
 export const startGoogleLogin = () => {
     return ( dispatch ) => {
 
-        firebase.auth().signInWithPopup( googleAuthProvider )
+        projectAuth.signInWithPopup( googleAuthProvider )
             .then( ({ user }) => {
                 console.log(user)
                 dispatch(
@@ -21,6 +21,26 @@ export const startGoogleLogin = () => {
                 )
             });
 
+    }
+}
+
+export const startRegisterWithEmailPasswordName = (email, password, name ) => {
+   
+    return ( dispatch) => {  // task async
+           projectAuth.createUserWithEmailAndPassword( email, password)
+           .then( async ({ user }) => {
+
+            //update profile
+            await user.updateProfile({  displayName: name  })
+
+            console.log(user)
+            dispatch(
+                login( user.uid, user.displayName )
+            )
+        })
+        .catch( e =>{
+            console.log(e)
+        })      
     }
 }
 
