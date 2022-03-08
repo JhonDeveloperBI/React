@@ -35,6 +35,10 @@ export const activeNote = ( id, note ) => ({
     }
 });
 
+export const setNotes = ( notes ) => ({
+    type: types.notesLoad,
+    payload: notes
+});
 
 // add NewNote
 /*
@@ -56,10 +60,7 @@ export const startLoadingNotes = ( uid ) => {
 }
 
 
-export const setNotes = ( notes ) => ({
-    type: types.notesLoad,
-    payload: notes
-});
+
 
 
 export const startSaveNote = ( note ) => {
