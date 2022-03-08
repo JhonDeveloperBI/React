@@ -9,9 +9,12 @@ export const removeError = () => ({
     type: types.uiRemoveError
 });
 
+// task 
 export const startLoading = () => ({
     type: types.uiStartLoading
 })
+
+//task
 export const finishLoading = () => ({
     type: types.uiFinishLoading
 })

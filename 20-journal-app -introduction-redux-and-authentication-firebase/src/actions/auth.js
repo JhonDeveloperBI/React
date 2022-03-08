@@ -1,17 +1,24 @@
 import { projectAuth, googleAuthProvider } from '../firebase/fireabase-config';
 import { types } from "../components/types/types";
+import { finishLoading, startLoading } from './ui';
 
 export const startLoginEmailPassword = ( email,password) =>{
     return ( dispatch) =>{
 
+        dispatch( startLoading() );
+
         projectAuth.signInWithEmailAndPassword( email, password)
             .then( ({ user }) => {
+                  
+                dispatch( finishLoading() );
+
                 dispatch(
                     login( user.uid, user.displayName )
                 )
             })
             .catch( e =>{
                 console.log(e);
+                dispatch( finishLoading() );
             })  
     }
 }

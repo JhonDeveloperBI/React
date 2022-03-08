@@ -20,13 +20,13 @@ export const uiReducer = ( state = initialState, action ) => {
                     ...state,
                     msgError: null
                 }
-
+// Ui Reducer for task
         case types.uiStartLoading:
             return {
                 ...state,
                 loading: true
             }
- 
+ // Ui Reducer for task
         case types.uiFinishLoading:
             return {
                 ...state,
