@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import {
@@ -15,17 +15,33 @@ export const AppRouter = () => {
 
    const dispatch = useDispatch();
 
+   const [ checking, setChecking ] = useState(true);
+   const [ isLoggedIn, setIsLoggedIn ] = useState(false);
+   
+
   useEffect(() => {
       projectAuth.onAuthStateChanged( ( user ) =>{
         
         //console.log(user);
          if( user?.uid ){
-           dispatch( login(user.uid, user.displayName) ) 
+           dispatch( login(user.uid, user.displayName) )
+           setIsLoggedIn( true ); 
+         }else{
+          setIsLoggedIn( false ); 
          }
+         
+         setChecking(false);
 
       });
 
-  }, [ dispatch ])  // only execute one 
+  }, [ dispatch, setChecking, setIsLoggedIn ])  // only execute one 
+
+
+  if(checking){
+    return(
+      <h1> Espere ...</h1>
+    )
+  }
   
   return (
     <Router>
