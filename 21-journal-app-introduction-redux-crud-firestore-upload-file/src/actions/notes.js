@@ -2,7 +2,7 @@
 
 import { db } from '../firebase/fireabase-config';
 import { types } from '../components/types/types';
-//import { loadNotes } from '../helpers/loadNotes';
+import { loadNotes } from '../helpers/loadNotes';
 //import { fileUpload } from '../helpers/fileUpload';
 
 
@@ -39,6 +39,15 @@ export const setNotes = ( notes ) => ({
     type: types.notesLoad,
     payload: notes
 });
+
+export const startLoadingNotes = ( uid ) => {
+    return async( dispatch ) => {
+        
+        const notes = await loadNotes( uid );
+        dispatch( setNotes( notes ) );
+
+    }
+}
 
 // add NewNote
 /*

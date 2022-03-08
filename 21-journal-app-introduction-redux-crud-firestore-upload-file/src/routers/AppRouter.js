@@ -6,10 +6,9 @@ import {
     Switch
 } from 'react-router-dom';
 import { login } from '../actions/auth';
-import { setNotes } from '../actions/notes';
+import { startLoadingNotes } from '../actions/notes';
 import { JournalScreen } from '../components/journal/JournalScreen';
 import { projectAuth } from '../firebase/fireabase-config';
-import { loadNotes } from '../helpers/loadNotes';
 import { AuthRouter } from './AuthRouter';
 import { PrivateRoute } from './PrivateRoute';
 import { PublicRoute } from './PublicRoute';
@@ -30,8 +29,8 @@ export const AppRouter = () => {
            dispatch( login(user.uid, user.displayName) )
            setIsLoggedIn( true ); 
 
-           const notes = await loadNotes( user.uid );
-           dispatch( setNotes( notes ) )
+           
+           dispatch( startLoadingNotes( user.uid ) )
 
          }else{
           setIsLoggedIn( false ); 
