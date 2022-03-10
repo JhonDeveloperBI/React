@@ -85,3 +85,9 @@ npm install sweetalert2
 https://momentjs.com/
 
 npm install moment --save
+
+
+https://cloudinary.com/
+
+
+npm i cloudinary
