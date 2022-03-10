@@ -1,4 +1,4 @@
-//import Swal from 'sweetalert2';
+import Swal from 'sweetalert2';
 
 import { db } from '../firebase/fireabase-config';
 import { types } from '../components/types/types';
@@ -49,6 +49,37 @@ export const startLoadingNotes = ( uid ) => {
     }
 }
 
+export const startSaveNote = ( note ) => {
+    return async( dispatch, getState ) => {
+
+        const { uid } = getState().auth;
+
+        if ( !note.url ){
+            delete note.url;
+        }
+
+        const noteToFirestore = { ...note };
+        delete noteToFirestore.id;
+
+        await db.doc(`${ uid }/journal/notes/${ note.id }`).update( noteToFirestore );
+
+        dispatch( refreshNote( note.id, noteToFirestore ) );
+        Swal.fire('Saved', note.title, 'success');
+    }
+}
+
+
+export const refreshNote = ( id, note ) => ({
+    type: types.notesUpdated,
+    payload: {
+        id,
+        note: {
+            id,
+            ...note
+        }
+    }
+});
+
 // add NewNote
 /*
 export const addNewNote = ( id, note ) => ({
@@ -72,24 +103,7 @@ export const startLoadingNotes = ( uid ) => {
 
 
 
-export const startSaveNote = ( note ) => {
-    return async( dispatch, getState ) => {
 
-        const { uid } = getState().auth;
-
-        if ( !note.url ){
-            delete note.url;
-        }
-
-        const noteToFirestore = { ...note };
-        delete noteToFirestore.id;
-
-        await db.doc(`${ uid }/journal/notes/${ note.id }`).update( noteToFirestore );
-
-        dispatch( refreshNote( note.id, noteToFirestore ) );
-        Swal.fire('Saved', note.title, 'success');
-    }
-}
 
 export const refreshNote = ( id, note ) => ({
     type: types.notesUpdated,
