@@ -3,7 +3,7 @@ import Swal from 'sweetalert2';
 import { db } from '../firebase/fireabase-config';
 import { types } from '../components/types/types';
 import { loadNotes } from '../helpers/loadNotes';
-//import { fileUpload } from '../helpers/fileUpload';
+import { fileUpload } from '../helpers/fileUpload';
 
 
 export const startNewNote = () => {
@@ -80,6 +80,33 @@ export const refreshNote = ( id, note ) => ({
     }
 });
 
+// upload  file
+export const startUploading = ( file ) => {
+    return async( dispatch, getState ) => {
+
+        const { active:activeNote } = getState().notes;
+
+        Swal.fire({
+            title: 'Uploading...',
+            text: 'Please wait...',
+            allowOutsideClick: false,
+            onBeforeOpen: () => {
+                Swal.showLoading();
+            }
+        });
+
+        const fileUrl = await fileUpload( file );
+
+        console.log( fileUrl )
+       // activeNote.url = fileUrl;
+
+        //dispatch( startSaveNote( activeNote ) )
+        
+
+        Swal.close();
+    }
+}
+
 // add NewNote
 /*
 export const addNewNote = ( id, note ) => ({
@@ -103,43 +130,6 @@ export const startLoadingNotes = ( uid ) => {
 
 
 
-
-
-export const refreshNote = ( id, note ) => ({
-    type: types.notesUpdated,
-    payload: {
-        id,
-        note: {
-            id,
-            ...note
-        }
-    }
-});
-
-
-export const startUploading = ( file ) => {
-    return async( dispatch, getState ) => {
-
-        const { active:activeNote } = getState().notes;
-
-        Swal.fire({
-            title: 'Uploading...',
-            text: 'Please wait...',
-            allowOutsideClick: false,
-            onBeforeOpen: () => {
-                Swal.showLoading();
-            }
-        });
-
-        const fileUrl = await fileUpload( file );
-        activeNote.url = fileUrl;
-
-        dispatch( startSaveNote( activeNote ) )
-        
-
-        Swal.close();
-    }
-}
 
 
 export const startDeleting = ( id ) => {
