@@ -86,6 +86,7 @@ export const startUploading = ( file ) => {
 
         const { active:activeNote } = getState().notes;
 
+        // alert
         Swal.fire({
             title: 'Uploading...',
             text: 'Please wait...',
@@ -96,13 +97,14 @@ export const startUploading = ( file ) => {
         });
 
         const fileUrl = await fileUpload( file );
+        activeNote.url = fileUrl;
 
         console.log( fileUrl )
-       // activeNote.url = fileUrl;
+      
 
-        //dispatch( startSaveNote( activeNote ) )
+        dispatch( startSaveNote( activeNote ) )
         
-
+         // close
         Swal.close();
     }
 }
