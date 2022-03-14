@@ -109,6 +109,24 @@ export const startUploading = ( file ) => {
     }
 }
 
+
+export const startDeleting = ( id ) => {
+    return async( dispatch, getState ) => {
+         
+        const uid = getState().auth.uid;
+        await db.doc(`${ uid }/journal/notes/${ id }`).delete();
+
+        dispatch( deleteNote(id) );
+
+    }
+}
+
+export const deleteNote = (id) => ({
+    type: types.notesDelete,
+    payload: id
+});
+
+
 // add NewNote
 /*
 export const addNewNote = ( id, note ) => ({
