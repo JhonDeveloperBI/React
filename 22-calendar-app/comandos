@@ -36,3 +36,5 @@ https://gist.github.com/Klerith/8c9b2178830045b3f5126422bd0223e1
 
 
 npm i react-datetime-picker
+
+npm i sweetalert2
