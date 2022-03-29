@@ -51,6 +51,7 @@ export const CalendarModal = () => {
 
 
     const closeModal = () =>{
+      
     }
 
     const handleStartDateChange = ( e ) => {
@@ -85,6 +86,10 @@ export const CalendarModal = () => {
       if( title.trim().length <2 ){
           return setTitleValid( false )
       }
+
+      // todo: Realizar grabacion en bd
+      setTitleValid(true);
+      closeModal();
       
     }
 
