@@ -53,7 +53,7 @@ export const calendarReducer = ( state = initialState, action ) => {
                     e => ( e.id === action.payload.id ) ? action.payload : e
                 )
             }
-        /*
+        
         case types.eventDeleted:
             return {
                 ...state,
@@ -62,7 +62,6 @@ export const calendarReducer = ( state = initialState, action ) => {
                 ),
                 activeEvent: null
             }
-            */
 
         default:
             return state;
