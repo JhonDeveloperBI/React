@@ -2,3 +2,5 @@ npm i nodemon
 
 //script in package.json
 npm run dev
+
+npm i express
