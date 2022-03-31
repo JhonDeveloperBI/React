@@ -4,3 +4,5 @@ npm i nodemon
 npm run dev
 
 npm i express
+
+npm i dotenv
