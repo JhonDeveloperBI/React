@@ -6,9 +6,7 @@ const app = express();
 app.use(express.static('public'));
 
 // route    
-app.get('/', function(req, res){
-    res.send("Hello World");
-});
+app.use('api/auth'.require('./routes/auth'));
 
 //listen for requests
 app.listen(process.env.PORT, function(){
