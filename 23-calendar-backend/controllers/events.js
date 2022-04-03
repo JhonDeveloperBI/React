@@ -1,6 +1,7 @@
+const { response } = require('express');
 
 
-const getEventos = (req, res) => {
+const getEventos = (req, res = response) => {
     res.status(200).json({
         ok: true,
         msg:'getEventos'
@@ -9,7 +10,7 @@ const getEventos = (req, res) => {
 
 
 
-const crearEvento = (req, res) => {
+const crearEvento = (req, res = response) => {
     res.status(200).json({
         ok: true,
         msg:'crearEvento'
@@ -17,14 +18,14 @@ const crearEvento = (req, res) => {
 }
 
 
-const actualizarEvento = (req, res) => {
+const actualizarEvento = (req, res = response) => {
     res.status(200).json({
         ok: true,
         msg:'actualizarEvento'
     })
 }
 
-const eliminarEvento = (req, res) => {
+const eliminarEvento = (req, res = response) => {
     res.status(200).json({
         ok: true,
         msg:'eliminarEvento'
