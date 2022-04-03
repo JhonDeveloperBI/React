@@ -1,14 +1,36 @@
 const express = require('express');
 require('dotenv').config();
-// create a new express app
+const cors = require('cors');
+const { dbConnection } = require('./database/config');
+
+// Crear el servidor de express
 const app = express();
 
-app.use(express.static('public'));
+// Base de datos
+dbConnection();
 
-// route    
-app.use('api/auth'.require('./routes/auth'));
+// CORS
+app.use(cors())
 
-//listen for requests
-app.listen(process.env.PORT, function(){
-    console.log("Server is listening on port 4000");
+// Directorio Público
+app.use( express.static('public') );
+
+// Lectura y parseo del body
+app.use( express.json() );
+
+// Rutas
+app.use('/api/auth', require('./routes/auth') );
+// TODO: CRUD: Eventos
+
+
+
+// Escuchar peticiones
+app.listen( process.env.PORT, () => {
+    console.log(`Servidor corriendo en puerto ${ process.env.PORT }`);
 });
+
+
+
+
+
+
