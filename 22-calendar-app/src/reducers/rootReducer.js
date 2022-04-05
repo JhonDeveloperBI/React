@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import { uiReducer } from './uiReducers';
 
 import { calendarReducer } from './calendarReducer';
-import { authReducer } from './AuthReducer';
+import { authReducer } from './authReducer';
 
 
 
