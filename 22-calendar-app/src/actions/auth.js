@@ -78,6 +78,7 @@ const login = ( user ) => ({
 });
 
 
+// logout
 export const startLogout = () => {
     return ( dispatch ) => {
 
