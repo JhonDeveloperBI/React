@@ -17,6 +17,7 @@ const fetchSinToken = ( endpoint, data, method = 'GET' ) => {
     }
 }
 
+// request with token
 const fetchConToken = ( endpoint, data, method = 'GET' ) => {
 
     const url = `${ baseUrl }/${ endpoint }`;

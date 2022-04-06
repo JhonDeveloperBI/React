@@ -25,7 +25,7 @@ export const startLogin = ( email, password ) => {
 
     }
 }
-
+ // creating a new user
 export const startRegister = ( email, password, name ) => {
     return async( dispatch ) => {
 
@@ -47,7 +47,7 @@ export const startRegister = ( email, password, name ) => {
 
     }
 }
-  // creating a new user
+ // checking if the token is valid and renew it if it is
 export const startChecking = () => {
     return async(dispatch) => {
 
