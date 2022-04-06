@@ -47,7 +47,7 @@ export const startRegister = ( email, password, name ) => {
 
     }
 }
-
+  // creating a new user
 export const startChecking = () => {
     return async(dispatch) => {
 
