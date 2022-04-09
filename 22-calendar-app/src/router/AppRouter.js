@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import {
     BrowserRouter as Router,
-    Switch,
-    Redirect
+    Routes,
+    Route
   } from 'react-router-dom';
   
 import { useDispatch, useSelector } from 'react-redux';
@@ -31,7 +31,7 @@ export const AppRouter = () => {
     return (
         <Router>
             <div>
-                <Switch>
+                <Routes>
 
                     <PublicRoute 
                         exact 
@@ -47,8 +47,8 @@ export const AppRouter = () => {
                         isAuthenticated={ !!uid }
                     />
 
-                    <Redirect to="/" />   
-                </Switch>
+                    <Route to="/" />   
+                </Routes>
             </div>
         </Router>
     )
