@@ -114,7 +114,7 @@ export const eventStartLoading = () => {
             
             const resp = await fetchConToken( 'events' );
             const body = await resp.json();
-
+            // convert string to date with moment
             const events = prepareEvents( body.eventos );
             dispatch( eventLoaded( events ) );
 
